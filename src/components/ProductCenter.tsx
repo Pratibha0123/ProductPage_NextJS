@@ -1,5 +1,5 @@
-import Image from 'next/image'; // Import Next.js Image component
-import img1 from '../../public/Image/img1.png'; // Move images to the public folder
+import Image from 'next/image'; 
+import img1 from '../../public/Image/img1.png'; 
 
 const ProductCenter = () => {
   return (
