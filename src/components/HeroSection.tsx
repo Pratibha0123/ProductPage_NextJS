@@ -6,7 +6,7 @@ import img1 from '../../public/Image/img2.png';
 import img2 from '../../public/Image/img1.png';
 import YourSizeModal from './YourSizeModal';
 import styles from './HeroPage.module.css';
-import Link from 'next/link'; // Import Next.js Link
+import Link from 'next/link'; 
 
 function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
