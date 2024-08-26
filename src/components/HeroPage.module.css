@@ -1,0 +1,458 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #fcfcfc;
+}
+
+.containerLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.containerLeft img {
+  margin-bottom: 10px;
+  height: 900px;
+  width: 1000px;
+  cursor: crosshair;
+}
+
+.containerRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 160px;
+  line-height: 1.1;
+  margin-top: 13%;
+}
+
+.containerRight .left {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+}
+
+.containerRight .left h1 {
+  color: #1f1c1c;
+  font-size: 30px;
+  font-weight: 500;
+  margin-right: 20px;
+  flex: 1;
+}
+
+.containerRight .left .editButton {
+  color: rgb(38, 26, 207);
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.editButton:hover {
+  color: rgb(28, 21, 159);
+}
+
+.containerRight .cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.containerRight .contLeft {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.containerRight .contLeft h3 {
+  color: rgb(22, 22, 22);
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.containerRight .contLeft h4 {
+  color: gray;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.containerRight .contRight h4 {
+  color: gray;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.containerRight button {
+  display: inline-block;
+  background-color: #000;
+  border-radius: 12px;
+  height: 55px;
+  width: 100%;
+  color: #fafafa;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.containerRight button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: -1;
+  transition: transform 0.5s cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  transform: scaleX(0);
+}
+
+.containerRight button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(244, 245, 240);
+  z-index: -1;
+  border-radius: 12px;
+  transform: scale(0, 1);
+  transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.containerRight button:hover {
+  color: #000;
+}
+
+.containerRight button:hover::after {
+  transform: scale(1, 1);
+}
+
+.containerRight button:focus {
+  outline: none;
+}
+
+/* Modal-specific classes */
+.modalOpen {
+  overflow: hidden; /* Prevent scrolling when modal is open */
+}
+
+.containerBlur {
+  filter: blur(5px);
+  transition: filter 0.3s ease; /* Smooth transition for blur effect */
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .containerLeft img {
+    max-height: 700px;
+  }
+}
+
+@media (max-width: 992px) {
+  .containerLeft img {
+    max-height: 600px;
+  }
+
+  .containerRight {
+    padding: 20px;
+  }
+
+  .containerRight .left h1 {
+    font-size: 1.75em;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .containerLeft img {
+    max-height: 400px;
+  }
+
+  .containerRight {
+    padding: 10px;
+  }
+
+  .containerRight .left h1 {
+    font-size: 1.5em;
+  }
+
+  .containerRight .contLeft h3,
+  .containerRight .contLeft h4,
+  .containerRight .contRight h4 {
+    font-size: 1em;
+  }
+
+  .containerRight button {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .containerLeft img {
+    max-height: 300px;
+  }
+
+  .containerRight .left h1 {
+    font-size: 1.2em;
+  }
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;  
+    background: #fcfcfc;
+    display: flex;
+   
+  }
+  /*container left*/
+  .containerLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    margin-right: 20px; 
+  }
+  
+  .containerLeft img {
+    margin-bottom: 10px; 
+    height: 900px;
+    width: 1000px;
+    cursor: crosshair;
+  
+      
+  }
+  .modalOverlay {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .modelBlur {
+    filter: blur(5px);
+  } 
+  .modalOpen {
+    overflow: hidden; /* This is managed by adding/removing the class using JavaScript */
+  }
+  
+  .containerRight {
+    flex: 1;
+    display: flex;
+    /* position: fixed; */
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 160px;
+    line-height: 1.1;
+    margin-top: 13%;
+  }
+    
+  .containerRight .left {
+    display: flex;
+    align-items: center; 
+    padding: 30px;
+  }
+  
+  .containerRight .left h1 {
+    color: #1f1c1c;
+    font-size: 30px;
+    font-weight: 500;
+    margin-right: 20px; 
+    flex: 1; 
+  }
+  
+  .containerRight .left .editButton {
+    color: rgb(38, 26, 207);
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .editButton:hover {
+    color: rgb(28, 21, 159);
+  }
+  .containerRight .right span{
+    color: gray;
+    font-size: 17px;
+    font-weight: 400
+  }
+  
+  .containerRight .cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .containerRight .contLeft{
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .containerRight .contLeft h3 {
+    color: rgb(22, 22, 22);
+    font-size: 20px;
+    font-weight: 400; 
+    margin-right: 15px;
+    font: bold;
+  }
+  
+  .containerRight .contLeft h4 {
+    color: gray;
+    font-size: 17px; 
+    font-weight: 400; 
+  }
+  
+  .containerRight .contRight h4{
+    color: gray;
+    font-size: 17px; 
+    font-weight: 400; 
+  }
+  
+  .containerRight button {
+    display: inline-block;
+    background-color: #000;
+    border-radius: 12px;
+    height: 55px;
+    width: 100%; 
+    color: #fafafa;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .containerRight button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: -1;
+    transition: transform 0.5s cubic-bezier(0.5, 1.6, 0.4, 0.7);
+    transform: scaleX(0);
+  }
+  
+  .containerRight button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(244, 245, 240);
+    z-index: -1;
+    border-radius: 12px;
+    transform: scale(0, 1);
+    transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+  .containerRight button:hover {
+    color: #000;
+  }
+  
+  .containerRight button:hover::after {
+    transform: scale(1, 1);
+  }
+  
+  .containerRight button:focus {
+    outline: none;           
+  }
+  
+  
+  
+  body.modal-open {
+    overflow: hidden;
+  }
+  
+  .modal-overlay {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  
+  .modal-open .container {
+    filter: blur(5px);
+  }
+  
+  @media (max-width: 1200px) {
+    .container-left img {
+      max-height: 700px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .container-left img {
+      max-height: 600px;
+    }
+  
+    .containerRight {
+      padding: 20px;
+    }
+  
+    .containerRight .left h1 {
+      font-size: 1.75em;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .container-left img {
+      max-height: 400px;
+    }
+  
+    .containerRight {
+      padding: 10px;
+    }
+  
+    .containerRight .left h1 {
+      font-size: 1.5em;
+    }
+  
+    .containerRight .cont-left h3,
+    .containerRight .cont-left h4,
+    .containerRight .cont-right h4 {
+      font-size: 1em;
+    }
+  
+    .containerRight button {
+      max-width: 300px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container-left img {
+      max-height: 300px;
+    }
+  
+    .containerRight .left h1 {
+      font-size: 1.2em;
+    }
+  }
+  

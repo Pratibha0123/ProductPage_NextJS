@@ -1,4 +1,16 @@
+/* Hero page */
 
+body .modal-open {
+  overflow: hidden;
+}
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+
+
+/* Editpage */
 
 .editProfile {
   position: fixed;
@@ -260,6 +272,8 @@ background: #fff;
   }
 
 
+
+  
 
 
 

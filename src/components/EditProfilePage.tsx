@@ -1,13 +1,9 @@
-'use client'; 
+"use client"; 
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'; 
-import styles from './EditProfilePage.module.css'; 
-import Image from 'next/image'; 
-// import YourSizeModal from './YourSizeModal'
-
-import img1 from '../../public/Image/img2.png'; 
-
+import styles from './StylePage.module.css'; 
+import YourSizeModal from './YourSizeModal';
 
 interface ProfileData {
   upperBodyShape: string;
@@ -19,20 +15,18 @@ interface ProfileData {
 }
 
 const EditProfilePage = () => {
-  
   const [profileData, setProfileData] = useState<ProfileData>({
     upperBodyShape: 'Athletic',
     lowerBodyShape: 'Flat',
     height: '5\'10"',
     shirtSize: '38',
     shoulderType: 'Average',
-    preferredFitType: 'Structured'
+    preferredFitType: 'Structured',
   });
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const router = useRouter(); 
 
-  
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
@@ -42,22 +36,20 @@ const EditProfilePage = () => {
   };
 
   const handleSave = (data: ProfileData) => {
+    console.log("Saving data:", data); 
     setProfileData(data);
     handleCloseModal();
   };
-
+  
   const handleClosePage = () => {
     router.push('/'); 
   };
 
   return (
     <div className={styles.editProfile}>
-      
-
       <div className={styles.editProfileRight}>
-        
         <div className={styles.profile}> 
-        <div>
+          <div>
             <h4>We guarantee the fit you need</h4>
             <div className={styles.heading}>
               <h4>94% of our customers love their fit the first time.</h4>
@@ -112,24 +104,20 @@ const EditProfilePage = () => {
             <p>{profileData.preferredFitType}</p>
           </div>
 
-        
           <div className={styles.button}>
             <button onClick={handleClosePage}>Continue</button>
           </div>
         </div>
         
-     {/* <YourSizeModal
+        <YourSizeModal
           isOpen={isModalOpen}
           onClose={handleCloseModal}
           onSave={handleSave}
-          initialData={profileData}
-        />  */}
+          initialData={profileData} 
+        /> 
       </div>
     </div>
   );
 };
 
 export default EditProfilePage;
-
-
-
