@@ -61,8 +61,8 @@ const EditProfilePage = () => {
             <button onClick={handleClosePage}>X</button>
           </div>
           <div className={styles.user}>
-            <h4 className={styles.left}>I'm New</h4>
-            <h4 className={styles.right}>I've Shopped Before</h4>
+            <h4 className={styles.left}>I am New</h4>
+            <h4 className={styles.right}>I have Shopped Before</h4>
           </div>
           <hr/>
           <div className={styles.heading}>
