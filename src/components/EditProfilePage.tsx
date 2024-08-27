@@ -1,9 +1,10 @@
-"use client"; 
-
+"use client";
+import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'; 
 import styles from './StylePage.module.css'; 
 import YourSizeModal from './YourSizeModal';
+import img1 from '../../public/Image/img2.png';
 
 interface ProfileData {
   upperBodyShape: string;
@@ -47,24 +48,22 @@ const EditProfilePage = () => {
 
   return (
     <div className={styles.editProfile}>
+      <div className={styles.editProfileLeft}>
+        <Image src={img1} alt="Image 1" />
+      </div>
       <div className={styles.editProfileRight}>
         <div className={styles.profile}> 
-          <div>
-            <h4>We guarantee the fit you need</h4>
-            <div className={styles.heading}>
-              <h4>94% of our customers love their fit the first time.</h4>
-              <h4 className={styles.learn}>Learn more</h4>
-            </div>
-          </div>
+        
+
           <div className={styles.size}>
-            <h2>Your Size</h2>
+            <h2 className={styles.h2} >Your Size</h2>
             <button onClick={handleClosePage}>X</button>
           </div>
           <div className={styles.user}>
             <h4 className={styles.left}>I am New</h4>
             <h4 className={styles.right}>I have Shopped Before</h4>
           </div>
-          <hr/>
+          <hr className={styles.hr}/>
           <div className={styles.heading}>
             <h2>Profile</h2>
             <button onClick={handleOpenModal}>Edit</button>
@@ -84,6 +83,7 @@ const EditProfilePage = () => {
             <strong>Height:</strong>
             <p>{profileData.height}</p>
           </div>
+          <hr className={styles.hr}/>
 
           <div className={styles.heading}>
             <h2>Shirt Sizing</h2>
@@ -103,10 +103,20 @@ const EditProfilePage = () => {
             <strong>Preferred Fit Type:</strong>
             <p>{profileData.preferredFitType}</p>
           </div>
+          <div>
+          <hr className={styles.hr}/>
+
+            <h4>We guarantee the fit you need</h4>
+            <div className={styles.heading}>
+              <h4>94% of our customers love their fit the first time.</h4>
+              <h4 className={styles.learn}>Learn more</h4>
+            </div>
+          </div>
 
           <div className={styles.button}>
             <button onClick={handleClosePage}>Continue</button>
           </div>
+          
         </div>
         
         <YourSizeModal
@@ -115,6 +125,7 @@ const EditProfilePage = () => {
           onSave={handleSave}
           initialData={profileData} 
         /> 
+        
       </div>
     </div>
   );

@@ -1,6 +1,4 @@
-"use client"
 import { useState, useEffect } from 'react';
-import router, { useRouter } from 'next/router';
 import Image, { StaticImageData } from 'next/image';
 import Athletic from '../../public/Image/Athletic.jpg'; 
 import Slight_Belly from '../../public/Image/Slight Belly.jpg';
@@ -69,11 +67,9 @@ const YourSizeModal: React.FC<YourSizeModalProps> = ({ isOpen, onClose, onSave, 
     preferredFitType: ''
   });
 
-  // const router = useRouter();
-
   useEffect(() => {
     if (initialData) {
-      setAnswers(initialData);
+      setAnswers(initialData);  
     }
   }, [initialData]);
 
@@ -91,9 +87,14 @@ const YourSizeModal: React.FC<YourSizeModalProps> = ({ isOpen, onClose, onSave, 
 
   if (!isOpen) return null;
 
-  const handleCalculateSizeClick = () => {
-    onSave(answers); 
-    router.push('/EditProfilePage'); 
+  const handleCalculateSizeClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();  
+    if (allQuestionsAnswered) {
+      console.log('Calling onSave with data:', answers);
+      onSave(answers); 
+    } else {
+      console.log('Not all questions are answered yet.');
+    }
   };
 
   return (
@@ -200,8 +201,3 @@ const YourSizeModal: React.FC<YourSizeModalProps> = ({ isOpen, onClose, onSave, 
 };
 
 export default YourSizeModal;
-
-
-
-
-
